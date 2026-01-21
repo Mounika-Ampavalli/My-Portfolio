@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ampavalli Mounika | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: url("mybg.webp") no-repeat center center fixed;
+      background-size: cover;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ---------- HEADER ---------- */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 10%;
+      background: linear-gradient(135deg, #020617, #0f172a);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .hero-text h1 span { color: #38bdf8; }
+
+    .hero-text p {
+      margin: 18px 0;
+      font-size: 1.1rem;
+      color: #cbd5f5;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-right: 15px;
+      margin-top: 20px;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background: #38bdf8;
+      color: #020617;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .btn:hover { transform: translateY(-3px); background: #0ea5e9; }
+
+    .btn.secondary:hover { background: #38bdf8; color: #020617; }
+
+    .hero-img img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #38bdf8;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 80px 10%; }
+
+    h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 50px;
+      color: #1e3a8a;
+    }
+
+    .card {
+      background: #020617;
+      padding: 30px;
+      border-radius: 18px;
+      margin-bottom: 30px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    /* ---------- EDUCATION ALIGNMENT ---------- */
+    .education-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .education-left {
+      max-width: 80%;
+    }
+
+    .education-duration {
+      font-weight: 600;
+      color: #38bdf8;
+      white-space: nowrap;
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-box {
+      background: #1e293b;
+      padding: 25px 15px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill-box i {
+      font-size: 2.5rem;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .skill-box:hover { transform: translateY(-8px); }
+
+    /* ---------- CERTIFICATIONS ---------- */
+    .cert-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .cert-list li {
+      margin: 12px 0;
+      font-size: 1.05rem;
+      color: #e5e7eb;
+    }
+
+    .cert-list i {
+      color: #38bdf8;
+      margin-right: 10px;
+    }
+
+    /* Internship title color */
+    #experience strong {
+      color: #38bdf8;
+    }
+
+    /* ---------- WORKSHOPS ---------- */
+    .workshop-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .workshop-list li {
+      margin: 18px 0;
+      font-size: 1.05rem;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    .workshop-list strong {
+      color: #38bdf8;
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .project-card h3 { margin-bottom: 10px; color: #e5e7eb; }
+
+    /* ---------- CONTACT ---------- */
+    .contact-info p { margin: 10px 0; }
+
+    .contact-info i { color: #38bdf8; margin-right: 10px; }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #020617;
+      padding: 30px;
+      text-align: center;
+      color: #94a3b8;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero-img { order: -1; }
+      .education-item { flex-direction: column; }
+      .education-duration { margin-top: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Ampavalli Mounika</span></h1>
+      <p>Software Developer | CSE Graduate | Python & Web Technologies</p>
+      <a href="#contact" class="btn">Contact Me</a>
+      <a href="Ampavalli's_Resume.pdf" class="btn secondary" download>Download Resume</a>
+    </div>
+
+    <div class="hero-img">
+      <img src="mounika.jpg" alt="Ampavalli Mounika">
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am a motivated Computer Science graduate with strong foundations in Python and full-stack web development.
+      I enjoy building clean, efficient, and user-friendly applications while continuously learning new technologies.
+      I am seeking an entry-level software developer role to contribute to impactful projects and grow professionally.
+    </p>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="card education-item">
+    <div class="education-left">
+      <strong>B.Tech – CSE</strong><br>
+      Sri Padmavathi Mahila Visvavidyalayam, Tirupati<br>
+      CGPA: 8.2
+    </div>
+    <div class="education-duration">(2022–2026)</div>
+  </div>
+
+  <div class="card education-item">
+    <div class="education-left">
+      <strong>Intermediate – MPC</strong><br>
+      Tandra Paparaya College, Bobbili<br>
+      CGPA: 9.7
+    </div>
+    <div class="education-duration">(2020–2022)</div>
+  </div>
+
+  <div class="card education-item">
+    <div class="education-left">
+      <strong>SSC</strong><br>
+      ZPHS, Makkuva<br>
+      CGPA: 9.8
+    </div>
+    <div class="education-duration">(2019–2020)</div>
+  </div>
+</section>
+
+<section id="personal-skills">
+  <h2>Personal Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-box"><i class="fas fa-user-tie"></i><p>Leadership</p></div>
+    <div class="skill-box"><i class="fas fa-clock"></i><p>Time Management</p></div>
+    <div class="skill-box"><i class="fas fa-users"></i><p>Team Collaboration</p></div>
+    <div class="skill-box"><i class="fas fa-comments"></i><p>Communication Skills</p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-box"><i class="fab fa-python"></i><p>Python</p></div>
+    <div class="skill-box"><i class="fab fa-html5"></i><p>HTML5</p></div>
+    <div class="skill-box"><i class="fab fa-css3-alt"></i><p>CSS3</p></div>
+    <div class="skill-box"><i class="fab fa-js"></i><p>JavaScript</p></div>
+    <div class="skill-box"><i class="fas fa-database"></i><p>SQL</p></div>
+    <div class="skill-box"><i class="fab fa-git-alt"></i><p>Git</p></div>
+    <div class="skill-box"><i class="fab fa-java"></i><p>Java</p></div>
+    <div class="skill-box"><i class="fas fa-server"></i><p>Django</p></div>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div class="card">
+    <ul class="cert-list">
+      <li><i class="fas fa-certificate"></i> NPTEL – Software Testing & Social Networks</li>
+      <li><i class="fas fa-certificate"></i> YBI – Cloud Computing & Big Data Internship</li>
+      <li><i class="fas fa-certificate"></i> YBI – Python Programming Internship</li>
+      <li><i class="fas fa-certificate"></i> YBI – Data Science & AI/ML Fundamentals</li>
+      <li><i class="fas fa-certificate"></i> LinkedIn – Data Science Foundations & Python Statistics</li>
+      <li><i class="fas fa-certificate"></i> GeeksforGeeks – Data Analytics</li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Internship</h2>
+  <div class="card">
+    <strong>Python Full Stack Developer Intern – ExcelR</strong> (2 Months)
+    <p>
+      Worked on Django-based web applications, handling backend logic, database operations,
+      and frontend integration using HTML, CSS, and JavaScript.
+    </p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="card project-card">
+      <img src="online bookstore.png" alt="Online Bookstore">
+      <h3>Online Bookstore Web Application</h3>
+      <p>Django-based application with authentication, cart management, and payment workflow.</p>
+    </div>
+
+    <div class="card project-card">
+      <img src="student management system.png" alt="Student Result System">
+      <h3>Student Result Management System</h3>
+      <p>Python & SQL system to manage, store, and retrieve academic records efficiently.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="workshops">
+  <h2>Workshops</h2>
+  <div class="card">
+    <ul class="workshop-list">
+      <li>
+        <strong>Microsoft AI Skills Workshop</strong><br>
+        Attended Microsoft AI Workshop at SPMVV and gained hands-on experience with AI tools and applications.
+      </li>
+      <li>
+        <strong>Artificial Technologies with IBM</strong><br>
+        Attended a hands-on workshop focused on core AI concepts, including Machine Learning.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card contact-info">
+    <p><i class="fas fa-envelope"></i> mounikaampavalli269@gmail.com</p>
+    <p><i class="fab fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/ampavalli-mounika-764844320" target="_blank"><u>LinkedIn Profile</u></a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ampavalli Mounika | Designed with ❤️</p>
+</footer>
+
+</body>
+</html>
